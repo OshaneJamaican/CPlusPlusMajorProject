@@ -48,7 +48,7 @@ public:
         doors.push_back(door);
     }
 
-    virtual void displayRoom() {
+    virtual void displayTheRoom() {
         cout << "You are in the " << name << "." << endl;
     }
 
@@ -64,7 +64,7 @@ public:
 class Bedroom : public Room {
 public:
     Bedroom() : Room("Bedroom") {}
-    void displayRoom() override {
+    void displayTheRoom() override {
         cout << "You are in the Bedroom." << endl;
     }
 };
@@ -73,7 +73,7 @@ class Bathroom : public Room {
 public:
     Bathroom() : Room("Bathroom") {}
 
-    void displayRoom() override {
+    void displayTheRoom() override {
         cout << "You are in the Bathroom." << endl;
     }
 };
@@ -82,7 +82,7 @@ class LivingRoom : public Room {
 public:
     LivingRoom() : Room("Living Room") {}
 
-    void displayRoom() override {
+    void displayTheRoom() override {
         cout << "You are in the Living Room." << endl;
     }
 };
@@ -91,7 +91,7 @@ class Kitchen : public Room {
 public:
     Kitchen() : Room("Kitchen") {}
 
-    void displayRoom() override {
+    void displayTheRoom() override {
         cout << "You are in the Kitchen." << endl;
     }
 };
@@ -100,7 +100,7 @@ class Basement : public Room {
 public:
     Basement() : Room("Basement") {}
 
-    void displayRoom() override {
+    void displayTheRoom() override {
         cout << "You are in the Basement." << endl;
     }
 };
@@ -202,7 +202,7 @@ void setExitDoor(vector<Room*>& rooms) {
 void startGame(vector<Room*>& rooms, Player& player) {
     int doorsOpened = 0;
     while(player.getLives() > 0 && doorsOpened < 7) {
-        player.getCurrentRoom()->displayRoom();
+        player.getCurrentRoom()->displayTheRoom();
 
         cout << "You have " << player.getLives() << " lives left. You have opened " << doorsOpened << " doors." << endl;
         cout << "Choose a door (1 or 2): ";
