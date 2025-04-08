@@ -21,8 +21,8 @@ class Player;
 
 class Door {
 public:
-    Room* leadsTo;  // The room this door leads to
-    bool isExit;     // Whether this door leads outside or not
+    Room* leadsTo;  // Room this door leads to
+    bool isExit;     // Exit door is true or false
 
     Door() : leadsTo(nullptr), isExit(false) {}
 
@@ -136,7 +136,7 @@ public:
     }
 };
 
-// Function to setup the game rooms and connections
+// Setup the game rooms and connections
 void setupGame(vector<Room*>& rooms, vector<Player>& players) {
     // Creating rooms
     Bedroom* bedroom = new Bedroom();
@@ -151,7 +151,7 @@ void setupGame(vector<Room*>& rooms, vector<Player>& players) {
     rooms.push_back(kitchen);
     rooms.push_back(basement);
 
-    // Creating doors and connecting rooms
+    // Create doors and connecting rooms
     Door bedroomDoor1, bedroomDoor2, bathroomDoor1, bathroomDoor2, livingRoomDoor1, livingRoomDoor2, kitchenDoor1, kitchenDoor2, basementDoor1, basementDoor2;
 
     bedroomDoor1.setDoor(bathroom, false);
@@ -182,23 +182,22 @@ void setupGame(vector<Room*>& rooms, vector<Player>& players) {
     basement->addDoor(basementDoor2);
 }
 
-// Function to choose random exit door
+// Choose random exit door
 void setExitDoor(vector<Room*>& rooms) {
     int randomRoomIndex = rand() % rooms.size();
     Room* exitRoom = rooms[randomRoomIndex];
 
-    // Make sure the Bathroom doesn't lead outside
+    // Ensure the Bathroom doesn't lead outside
     while(dynamic_cast<Bathroom*>(exitRoom)) {
         randomRoomIndex = rand() % rooms.size();
         exitRoom = rooms[randomRoomIndex];
     }
 
     Door* exitDoor = new Door();
-    exitDoor->setDoor(exitRoom, true);  // Marking the door as an exit
-    exitRoom->getDoors()[rand() % 2] = *exitDoor;  // Randomly assign exit door to a room
-}
+    exitDoor->setDoor(exitRoom, true);
+    exitRoom->getDoors()[rand() % 2] = *exitDoor;
 
-// Function to handle player movement and game mechanics
+// Main part of the game
 void startGame(vector<Room*>& rooms, Player& player) {
     int doorsOpened = 0;
     while(player.getLives() > 0 && doorsOpened < 7) {
