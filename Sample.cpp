@@ -198,6 +198,17 @@ void setExitDoor(vector<Room*>& rooms) {
     exitRoom->getDoors()[rand() % 2] = *exitDoor;  // Randomly assign exit door to a room
 }
 
+// Game intro
+    cout << "\n----------------------------\n";
+    cout << "RULES OF THE GAME";
+    cout << "\n----------------------------\n";
+    cout << "1. Find a way to exit the house\n";
+    cout << "2. The house has 5 areas: Bedroom, Bathroom, Living Room, Kitchen, Basement\n";
+    cout << "3. Each area has two doors leading to another area\n";
+    cout << "4. One room randomly has an exit door (not the bathroom)\n";
+    cout << "5. You have 7 doors to open before getting caught\n";
+    cout << "6. If your lives reach zero, the game ends.\n\n";
+
 // Function to handle player movement and game mechanics
 void startGame(vector<Room*>& rooms, Player& player) {
     int doorsOpened = 0;
