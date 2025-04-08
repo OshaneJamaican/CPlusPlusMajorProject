@@ -1,7 +1,7 @@
 #include <iostream>
-#include <string> // Needed to use strings
-#include <cstdlib> // Needed to use random numbers
-#include <ctime>   // Needed to use random numbers
+#include <string>
+#include <cstdlib> 
+#include <ctime>
 #include <vector>
 
 Testing!!!!!
@@ -14,7 +14,7 @@ Second edit
 
 using namespace std;
 
-// Forward Declaration of Classes
+// Forward declaration of classes
 class Door;  
 class Room;  
 class Player;
