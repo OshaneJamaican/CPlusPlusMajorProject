@@ -216,17 +216,17 @@ void startGame(vector<Room*>& rooms, Player& player) {
             doorsOpened++;
 
             if(door.isExit) {
-                cout << "Congratulations " << player.getName() << ", you've escaped the house!" << endl;
+                cout << "Awesome! " << player.getName() << ", you've exited the house, and won the game!" << endl;
                 break;
             }
         } else {
-            cout << "Invalid choice, you lost a life!" << endl;
+            cout << "Wrong choice! You just lost 1 life!" << endl;
             player.loseLife();
             doorsOpened++;
         }
 
         if(player.getLives() <= 0) {
-            cout << "You have no lives left! Game Over!" << endl;
+            cout << "Game Over! You've died!" << endl;
         }
     }
 }
@@ -239,7 +239,7 @@ int main() {
     vector<Player> players;
 
     string playerName;
-    cout << "Enter your name: ";
+    cout << "What is your name? : ";
     getline(cin, playerName);
 
     Player player(playerName);
