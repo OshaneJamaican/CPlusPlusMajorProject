@@ -45,7 +45,7 @@ public:
 
 // Show room's name
     virtual void displayTheRoom() {
-        cout << "You are in the " << name << "." << endl;
+        cout << "Your now in the " << name << "." << endl;
     }
 
     vector<Door>& getDoors() {
@@ -62,7 +62,7 @@ class Bedroom : public Room {
 public:
     Bedroom() : Room("Bedroom") {}
     void displayTheRoom() override {
-        cout << "You are in the Bedroom." << endl;
+        cout << "You're now in the Bedroom." << endl;
     }
 };
 
@@ -71,7 +71,7 @@ public:
     Bathroom() : Room("Bathroom") {}
 
     void displayTheRoom() override {
-        cout << "You are in the Bathroom." << endl;
+        cout << "You're now in the Bathroom." << endl;
     }
 };
 
@@ -80,7 +80,7 @@ public:
     LivingRoom() : Room("Living Room") {}
 
     void displayTheRoom() override {
-        cout << "You are in the Living Room." << endl;
+        cout << "You're now in the Living Room." << endl;
     }
 };
 
@@ -89,7 +89,7 @@ public:
     Kitchen() : Room("Kitchen") {}
 
     void displayTheRoom() override {
-        cout << "You are in the Kitchen." << endl;
+        cout << "You're now in the Kitchen." << endl;
     }
 };
 
@@ -98,7 +98,7 @@ public:
     Basement() : Room("Basement") {}
 
     void displayTheRoom() override {
-        cout << "You are in the Basement." << endl;
+        cout << "You're now in the Basement." << endl;
     }
 };
 
