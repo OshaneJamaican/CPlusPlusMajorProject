@@ -6,11 +6,12 @@
 
 using namespace std;
 
-// Forward declaration of classes
+// Forward declaration of classes 
 class Door;  
 class Room;  
 class Player;
 
+// Door class representing a door that leads to a room and may be an exit
 class Door {
 public:
     Room* leadsTo;  // Room this door leads to
@@ -23,6 +24,7 @@ public:
         isExit = exit;
     }
 
+// Returns the room this door leads to
     Room* openDoor() {
         return leadsTo;
     }
