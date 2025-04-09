@@ -184,7 +184,7 @@ void setExitDoor(vector<Room*>& rooms) {
     int randomRoomIndex = rand() % rooms.size();
     Room* exitRoom = rooms[randomRoomIndex];
 
-    // Function to ensure bathroom doesn't lead outside
+    // Loop to ensure bathroom doesn't lead outside
     while(dynamic_cast<Bathroom*>(exitRoom)) {
         randomRoomIndex = rand() % rooms.size();
         exitRoom = rooms[randomRoomIndex];
