@@ -45,7 +45,7 @@ public:
 
 // Show room's name
     virtual void displayTheRoom() {
-        cout << "Your now in the " << name << "." << endl;
+        cout << "You're now in the " << name << "." << endl;
     }
 
     vector<Door>& getDoors() {
