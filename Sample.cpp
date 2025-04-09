@@ -184,7 +184,7 @@ void setExitDoor(vector<Room*>& rooms) {
     int randomRoomIndex = rand() % rooms.size();
     Room* exitRoom = rooms[randomRoomIndex];
 
-    // Ensure the Bathroom doesn't lead outside
+    // Function to ensure bathroom doesn't lead outside
     while(dynamic_cast<Bathroom*>(exitRoom)) {
         randomRoomIndex = rand() % rooms.size();
         exitRoom = rooms[randomRoomIndex];
@@ -228,9 +228,9 @@ void startGame(vector<Room*>& rooms, Player& player) {
 }
 
 int main() {
-    srand(time(0)); // Initialize random seed
-
-    // Create the rooms and the player
+    srand(time(0)); 
+    
+    // Create the rooms and the player vector
     vector<Room*> rooms;
     vector<Player> players;
 
@@ -242,9 +242,9 @@ int main() {
     players.push_back(player);
 
     setupGame(rooms, players);
-    setExitDoor(rooms);  // Randomly select the exit door for the game
-
-    player.setCurrentRoom(rooms[0]);  // Set initial room (e.g., Bedroom)
+    setExitDoor(rooms);
+    
+    player.setCurrentRoom(rooms[0]); 
 
     // Start the game
     startGame(rooms, player);
