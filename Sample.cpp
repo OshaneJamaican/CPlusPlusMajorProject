@@ -4,14 +4,6 @@
 #include <ctime>
 #include <vector>
 
-Testing!!!!!
-
-Second edit
-
-3rd edit
-
-4th edit
-
 using namespace std;
 
 // Forward declaration of classes
