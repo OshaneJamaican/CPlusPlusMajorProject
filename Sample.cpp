@@ -43,6 +43,7 @@ public:
         doors.push_back(door);
     }
 
+// Show room's name
     virtual void displayTheRoom() {
         cout << "You are in the " << name << "." << endl;
     }
