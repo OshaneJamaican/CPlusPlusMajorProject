@@ -38,6 +38,7 @@ protected:
 public:
     Room(string roomName) : name(roomName) {}
 
+// Adding a door to this room
     void addDoor(Door door) {
         doors.push_back(door);
     }
