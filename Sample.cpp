@@ -57,6 +57,7 @@ public:
     }
 };
 
+// Show the name of the room being displayed
 class Bedroom : public Room {
 public:
     Bedroom() : Room("Bedroom") {}
@@ -103,7 +104,7 @@ public:
 
 class Player {
 private:
-    string name;
+    string name; 
     int lives;
     Room* currentRoom;
 
